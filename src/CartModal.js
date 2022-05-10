@@ -10,6 +10,7 @@ export const CartModal = ({
 }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
   const totalPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+  // eslint-disable-next-line
   const checkoutButton = styled.button`
     position: absolute;
     float: right;
@@ -50,12 +51,9 @@ export const CartModal = ({
         >
           X
         </button>
-        <checkoutButton
-          className="button"
-          onClick={() => alert("Proceed to checkout")}
-        >
+        <button className="button" onClick={() => alert("Proceed to checkout")}>
           Checkout
-        </checkoutButton>
+        </button>
       </section>
     </div>
   );

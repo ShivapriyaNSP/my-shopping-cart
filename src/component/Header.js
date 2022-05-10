@@ -1,6 +1,7 @@
 import React from "react";
 import { CartModal } from "../CartModal";
 import userLogo from "../assets/user.png";
+import { Link } from "react-router-dom";
 
 export default function Header(Props) {
   const { cartItems, onAdd, onRemove, countCartItems } = Props;
@@ -14,14 +15,14 @@ export default function Header(Props) {
     <header>
       <div className="row block ">
         <h1>
-          <a href="#/">JacandoShop</a>{" "}
+          <Link to="/">JacandoShop</Link>{" "}
         </h1>
         <div>
           <h3 className="row margin">
             <img src={userLogo} alt="User"></img>
-            <a href="#/"> Shiva</a>
-            <a
-              href="#/cart"
+            <Link to="/"> Shiva</Link>
+            <Link
+              to="#/cart"
               type="button"
               className="flexDisplay"
               onClick={handleClick}
@@ -33,7 +34,7 @@ export default function Header(Props) {
               ) : (
                 ""
               )}
-            </a>
+            </Link>
           </h3>
           <CartModal
             show={isShow}

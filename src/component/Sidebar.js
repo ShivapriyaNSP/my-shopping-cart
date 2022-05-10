@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 export default function Sidebar(Props) {
   return (
     <aside className="block ">
@@ -8,15 +10,15 @@ export default function Sidebar(Props) {
         <div className="textflow">
           <li>
             {" "}
-            <a href="#/vegetables">Vegetables</a>
+            <Link to="/vegetables">Vegetables</Link>
           </li>
           <li>
             {" "}
-            <a href="#/fruits">Fruits</a>
+            <Link to="/fruits">Fruits</Link>
           </li>
           <li>
             {" "}
-            <a href="#/cheese">Cheese</a>
+            <Link to="/cheese">Cheese</Link>
           </li>
         </div>
       </div>

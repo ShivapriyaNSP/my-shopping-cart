@@ -4,6 +4,7 @@ import Sidebar from "./component/Sidebar";
 import { data } from "./data";
 import "./assets/style.css";
 import { useState, React } from "react";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   const { products } = data;
   const [cartItems, setCartItems] = useState([]);
@@ -32,26 +33,28 @@ function App() {
     }
   };
   return (
-    <div>
-      <Header
-        products={products}
-        cartItems={cartItems}
-        onAdd={onAdd}
-        onRemove={onRemove}
-        countCartItems={cartItems.length}
-      ></Header>
-      <div className="flex-flow-left">
-        <Sidebar></Sidebar>
-      </div>
-      <div className="flex-flow-right">
-        <Main
+    <BrowserRouter>
+      <div>
+        <Header
           products={products}
           cartItems={cartItems}
           onAdd={onAdd}
           onRemove={onRemove}
-        ></Main>
+          countCartItems={cartItems.length}
+        ></Header>
+        <div className="flex-flow-left">
+          <Sidebar></Sidebar>
+        </div>
+        <div className="flex-flow-right">
+          <Main
+            products={products}
+            cartItems={cartItems}
+            onAdd={onAdd}
+            onRemove={onRemove}
+          ></Main>
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
